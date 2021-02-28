@@ -1,0 +1,39 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    cout<<"Please enter the n th size";
+    int n;//the size
+    int a[20];//the n cookies
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+
+    int m;//number of employees
+    cout<<"enter m";
+    cin>>m;
+    sort(a,a+n);
+
+    int mini=a[n-1];
+
+
+    for(int i=1;i<n-3;i++)
+    {
+        if(abs(a[i]-a[i+3])<mini)
+        {
+
+            mini=abs(a[i]-a[i+3]);
+        }
+    }
+
+    cout<<"the difference between the chosen goodie with highest price and the lowest price is:";
+    cout<<endl;
+    cout<<mini;
+
+    return 0;
+}
